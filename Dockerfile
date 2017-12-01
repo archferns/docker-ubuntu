@@ -4,6 +4,8 @@ RUN apt-get update -qq && apt-get install -y gcc autoconf bison build-essential 
 RUN ln -sf /usr/share/zoneinfo/Europe/Copenhagen /etc/localtime
 # install packages
 RUN apt-get install -y libmysqlclient-dev libcurl4-openssl-dev nodejs
+# install app packages
+RUN apt-get install -y xvfb
 # install ruby
 RUN cd
 RUN wget https://cache.ruby-lang.org/pub/ruby/2.3/ruby-2.3.1.tar.gz
