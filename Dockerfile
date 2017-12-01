@@ -1,12 +1,14 @@
 FROM ubuntu:16.04
 # setup dependencies
 RUN apt-get update -qq && apt-get install -y gcc autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev wget git-core tzdata
-ENV LANG C.UTF-8
 RUN ln -sf /usr/share/zoneinfo/Europe/Copenhagen /etc/localtime
 # install packages
 RUN apt-get install -y libmysqlclient-dev libcurl4-openssl-dev nodejs
 # install app packages
-RUN apt-get install -y xvfb php wkhtmltopdf ffmpeg imagemagick ffmpegthumbnailer unoconv
+RUN apt-get install -y locales xvfb php wkhtmltopdf ffmpeg imagemagick ffmpegthumbnailer unoconv
+# set locale for ffmpegthumbnailer
+RUN locale-gen en_US.UTF-8
+ENV LANG en_US.UTF-8
 RUN ln -s /usr/bin/wkhtmltopdf /usr/local/bin/wkhtmltopdf
 # install ruby
 RUN cd
