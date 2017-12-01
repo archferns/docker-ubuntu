@@ -5,7 +5,7 @@ RUN ln -sf /usr/share/zoneinfo/Europe/Copenhagen /etc/localtime
 # install packages
 RUN apt-get install -y libmysqlclient-dev libcurl4-openssl-dev nodejs
 # install app packages
-RUN apt-get install -y xvfb php wkhtmltopdf ffmpeg
+RUN apt-get install -y xvfb php wkhtmltopdf ffmpeg imagemagick ffmpegthumbnailer
 RUN ln -s /usr/bin/wkhtmltopdf /usr/local/bin/wkhtmltopdf
 # install ruby
 RUN cd
