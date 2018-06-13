@@ -27,14 +27,12 @@ gem 'carrierwave'
 gem 'carrierwave-base64'
 gem 'mini_magick'
 gem 'carrierwave-video-thumbnailer'
-gem 'streamio-ffmpeg'
 gem 'cancancan'
 gem 'flag_shih_tzu'
 gem 'cocoon'
 gem 'sidekiq'
 gem 'redis'
 gem 'redis-namespace'
-gem 'rollout'
 gem 'roboto'
 gem 'acts_as_list'
 gem 'exception_notification'
@@ -100,6 +98,7 @@ group :development, :test do
 	gem 'faker'
 end
 group :test do
+	gem 'capybara'
 	gem 'database_cleaner'
 	gem 'libnotify'
 	gem 'simplecov', require: false
